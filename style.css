@@ -1,0 +1,502 @@
+:root {
+  --primary: #003366;
+  --primary-light: #0055a4;
+  --secondary: #e6f0fa;
+  --accent: #ff9933;
+  --text: #333333;
+  --light-text: #666666;
+  --lighter-text: #999999;
+  --success: #228B22;
+  --danger: #cc0000;
+  --light-grey: #f5f5f5;
+  --border: #dddddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 25px;
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary);
+}
+
+.logout-btn {
+  color: var(--primary);
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn i {
+  margin-right: 5px;
+}
+
+.dashboard {
+  padding: 30px 0;
+}
+
+.welcome-bar {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.welcome-text p {
+  color: var(--light-text);
+}
+
+.last-login {
+  color: var(--lighter-text);
+  font-size: 14px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.account {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.account:hover {
+  border-color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.account-name {
+  font-weight: 500;
+}
+
+.account-balance {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.account-details {
+  color: var(--light-text);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.transaction-list {
+  list-style: none;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.transaction:last-child {
+  border-bottom: none;
+}
+
+.transaction-details {
+  flex-grow: 1;
+}
+
+.transaction-title {
+  font-weight: 500;
+}
+
+.transaction-date {
+  color: var(--lighter-text);
+  font-size: 13px;
+}
+
+.transaction-category {
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+.transaction-amount {
+  font-weight: 500;
+  align-self: center;
+}
+
+.credit {
+  color: var(--success);
+}
+
+.debit {
+  color: var(--danger);
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quick-action {
+  background-color: var(--light-grey);
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quick-action:hover {
+  background-color: var(--secondary);
+}
+
+.quick-action i {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+footer {
+  background-color: white;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.copyright {
+  color: var(--lighter-text);
+  font-size: 14px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--light-text);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Login screen */
+.login-screen {
+  display: none;
+  height: 100vh;
+  background-color: var(--light-grey);
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-header .logo {
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transform: translateX(150%);
+  transition: transform 0.3s ease-out;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.notification-success {
+  border-left: 4px solid var(--success);
+}
+
+.notification-success .notification-icon {
+  color: var(--success);
+}
+
+.notification-error {
+  border-left: 4px solid var(--danger);
+}
+
+.notification-error .notification-icon {
+  color: var(--danger);
+}
+
+.security-center {
+  background: linear-gradient(45deg, #003366, #0055a4);
+  color: white;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.security-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.security-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.security-info p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .menu {
+      display: none;
+  }
+}

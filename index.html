@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAS Bank - Online Banking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-landmark"></i></span>
+                    <span>KAS Bank</span>
+                </div>
+                <h2>Online Banking</h2>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn" style="width: 100%;">Log In</button>
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="#" style="color: var(--primary); text-decoration: none; font-size: 14px;">Forgot Username/Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Banking Interface -->
+    <div id="bankingInterface">
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-landmark"></i></span>
+                        <span>KAS Bank</span>
+                    </div>
+                    <ul class="menu">
+                        <li><a href="#" class="active">Accounts</a></li>
+                        <li><a href="#">Payments</a></li>
+                        <li><a href="#">Transfers</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <div class="container">
+                <div class="welcome-bar">
+                    <div class="welcome-text">
+                        <h1>Good afternoon, <span id="userName">Kyle</span></h1>
+                        <p>Welcome to your KAS Bank online banking</p>
+                    </div>
+                    <div class="last-login">
+                        <i class="far fa-clock"></i> Last login: 24/04/2025 12:30 PM
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="main-content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Your Accounts</h2>
+                                <button class="btn btn-outline">Add account</button>
+                            </div>
+                            
+                            <div class="account" id="currentAccount">
+                                <div class="account-header">
+                                    <span class="account-name">Premium Current Account</span>
+                                    <span class="account-balance">£4,285.62</span>
+                                </div>
+                                <div class="account-details">
+                                    <span class="account-number">Account Number: 1234 5678</span>
+                                    <span class="account-sort-code">Sort Code: 20-45-67</span>
+                                </div>
+                            </div>
+                            
+                            <div class="account">
+                                <div class="account-header">
+                                    <span class="account-name">Easy Saver</span>
+                                    <span class="account-balance">£12,750.00</span>
+                                </div>
+                                <div class="account-details">
+                                    <span class="account-number">Account Number: 4567 8912</span>
+                                    <span class="account-sort-code">Sort Code: 20-45-67</span>
+                                </div>
+                            </div>
+                            
+                            <div class="account">
+                                <div class="account-header">
+                                    <span class="account-name">ISA</span>
+                                    <span class="account-balance">£9,500.00</span>
+                                </div>
+                                <div class="account-details">
+                                    <span class="account-number">Account Number: 7891 2345</span>
+                                    <span class="account-sort-code">Sort Code: 20-45-67</span>
+                                </div>
+                            </div>
+                            
+                            <div class="actions">
+                                <button class="btn" id="payBtn">Make a payment</button>
+                                <button class="btn btn-outline">Transfer between accounts</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card" id="transactionsCard" style="display: none;">
+                            <div class="card-header">
+                                <h2 class="card-title">Recent Transactions - Premium Current Account</h2>
+                                <button class="btn btn-outline" id="backToAccounts">Back to accounts</button>
+                            </div>
+                            
+                            <ul class="transaction-list">
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Tesco Supermarket</div>
+                                        <div class="transaction-date">24 Apr 2025</div>
+                                        <div class="transaction-category">Shopping</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£42.67</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Virgin Media</div>
+                                        <div class="transaction-date">23 Apr 2025</div>
+                                        <div class="transaction-category">Bills</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£65.00</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Salary - Tech Innovations Ltd</div>
+                                        <div class="transaction-date">20 Apr 2025</div>
+                                        <div class="transaction-category">Income</div>
+                                    </div>
+                                    <div class="transaction-amount credit">+£3,250.00</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Costa Coffee</div>
+                                        <div class="transaction-date">18 Apr 2025</div>
+                                        <div class="transaction-category">Dining</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£4.75</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Amazon UK</div>
+                                        <div class="transaction-date">15 Apr 2025</div>
+                                        <div class="transaction-category">Shopping</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£29.99</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Transfer to Easy Saver</div>
+                                        <div class="transaction-date">14 Apr 2025</div>
+                                        <div class="transaction-category">Transfer</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£200.00</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">British Gas</div>
+                                        <div class="transaction-date">12 Apr 2025</div>
+                                        <div class="transaction-category">Bills</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£78.50</div>
+                                </li>
+                                <li class="transaction">
+                                    <div class="transaction-details">
+                                        <div class="transaction-title">Vodafone UK</div>
+                                        <div class="transaction-date">10 Apr 2025</div>
+                                        <div class="transaction-category">Bills</div>
+                                    </div>
+                                    <div class="transaction-amount debit">-£35.00</div>
+                                </li>
+                            </ul>
+                            
+                            <div class="actions" style="margin-top: 20px;">
+                                <button class="btn btn-outline">Download statement</button>
+                                <button class="btn btn-outline">Search transactions</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <div class="card">
+                            <div class="security-center">
+                                <div class="security-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="security-info">
+                                    <h3>Security Centre</h3>
+                                    <p>Your security is our priority</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="margin-bottom: 15px;">Quick Actions</h3>
+                            <div class="quick-actions">
+                                <div class="quick-action">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Cards</span>
+                                </div>
+                                <div class="quick-action">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Transfers</span>
+                                </div>
+                                <div class="quick-action">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>Statements</span>
+                                </div>
+                                <div class="quick-action">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="margin-bottom: 10px;">Currency Exchange Rates</h3>
+                            <div style="font-size: 14px; color: var(--light-text);">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span>EUR/GBP:</span>
+                                    <span>0.8534</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <span>USD/GBP:</span>
+                                    <span>0.7812</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>JPY/GBP:</span>
+                                    <span>0.0056</span>
+                                </div>
+                                <div style="margin-top: 10px; font-size: 12px;">
+                                    <span>Updated: 24/04/2025 13:45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Centre</a></li>
+                    </ul>
+                    <div class="copyright">
+                        &copy; 2025 KAS Bank plc. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Make a Payment</h3>
+                <button class="close-modal" id="closePaymentModal">&times;</button>
+            </div>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label class="form-label" for="payFrom">Pay from</label>
+                    <select id="payFrom" class="form-control">
+                        <option>Premium Current Account - £4,285.62</option>
+                        <option>Easy Saver - £12,750.00</option>
+                        <option>ISA - £9,500.00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="payeeName">Payee name</label>
+                    <input type="text" id="payeeName" class="form-control" placeholder="Enter payee name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="accountNumber">Account number</label>
+                    <input type="text" id="accountNumber" class="form-control" placeholder="8 digits">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="sortCode">Sort code</label>
+                    <input type="text" id="sortCode" class="form-control" placeholder="XX-XX-XX">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="amount">Amount</label>
+                    <input type="text" id="amount" class="form-control" placeholder="£0.00">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reference">Reference</label>
+                    <input type="text" id="reference" class="form-control" placeholder="E.g. Rent payment">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelPayment">Cancel</button>
+                    <button type="submit" class="btn" id="submitPayment">Make Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification notification-success" id="notification">
+        <span class="notification-icon"><i class="fas fa-check-circle"></i></span>
+        <span class="notification-message">Payment sent successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
